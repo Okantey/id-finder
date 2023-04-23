@@ -37,7 +37,7 @@ const Login = () => {
         }
       })
       .catch((error) => {
-        console.error(error);
+        console.log(error);
         setErrorMessage("An error occurred. Please try again.");
       });
   };

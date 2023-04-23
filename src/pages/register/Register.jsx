@@ -10,7 +10,7 @@ const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const handleRegister = async (event) => {
+  const handleRegister = (event) => {
     event.preventDefault();
     if (!username || !password || !confirmPassword) {
       setValidation("Please enter username and password");
@@ -18,31 +18,39 @@ const Register = () => {
     }
     if (password !== confirmPassword) {
       setErrorMessage("Passwords do not match");
+      return;
     }
     const registerData = { username, password, confirmPassword };
-    try {
-      const request = await fetch("http://localhost:8080/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(registerData),
+    fetch("http://localhost:8080/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(registerData),
+    })
+      .then((response) => response.json)
+      .then((data) => {
+        if (data) {
+          setTimeout(() => {
+            window.location.href = "/login";
+          }, 2000);
+          setSuccessMessage("account created successfully!!");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        setErrorMessage("an error occurred");
       });
-      if (request.ok) {
-        setTimeout(() => {
-          window.location.href = "/login";
-        }, 2000);
-        setErrorMessage(null);
-        setSuccessMessage("Account Created Successfully!");
-      }
-    } catch (err) {
-      console.log(err.message);
-      setErrorMessage("an error occurred");
-    }
   };
   return (
     <div className="account__container">
       <h1>Welcome Back!</h1>
+      {validation && <p>{validation}</p>}
+      {errorMessage && (
+        <p style={{ color: "red", textAlign: "center", fontWeight: "700" }}>
+          {errorMessage}
+        </p>
+      )}
       <form className="account__form" onSubmit={handleRegister}>
         <div className="account__props">
           <label htmlFor="Username">Username</label>
