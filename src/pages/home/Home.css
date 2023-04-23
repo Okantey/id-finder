@@ -1,0 +1,74 @@
+.home {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    135deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgb(59, 48, 84, 1) 100%
+  );
+  height: 100vh;
+  overflow: hidden;
+}
+
+.top__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+  padding-inline: 10%;
+}
+
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#submit {
+  width: 100%;
+  background: darkblue;
+  font-weight: var(--heavy-weight);
+  color: var(--Light-Gray);
+  border: none;
+  border-radius: 0.3rem;
+  padding-block: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.finder__props {
+  display: flex;
+  flex-direction: column;
+}
+.finder__props input {
+  padding-block: 0.8rem;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.4rem;
+}
+.finder__form label {
+  font-weight: 600;
+}
+.check__field {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-block: 1rem;
+  text-transform: uppercase;
+  align-items: center;
+  font-weight: 700;
+}
+
+.finder__form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
+  margin: auto;
+}

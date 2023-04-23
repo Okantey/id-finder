@@ -1,0 +1,65 @@
+{
+  "hash": "1c564e87",
+  "browserHash": "c630d91d",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "8f3fc8d1",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "adda7804",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "fa22c4f6",
+      "needsInterop": false
+    },
+    "@mui/icons-material/ContactEmergencyOutlined": {
+      "src": "../../node_modules/@mui/icons-material/ContactEmergencyOutlined.js",
+      "file": "@mui_icons-material_ContactEmergencyOutlined.js",
+      "fileHash": "e9114383",
+      "needsInterop": true
+    },
+    "@mui/icons-material/HomeOutlined": {
+      "src": "../../node_modules/@mui/icons-material/HomeOutlined.js",
+      "file": "@mui_icons-material_HomeOutlined.js",
+      "fileHash": "1b837f9c",
+      "needsInterop": true
+    },
+    "@mui/icons-material/NotificationsActiveOutlined": {
+      "src": "../../node_modules/@mui/icons-material/NotificationsActiveOutlined.js",
+      "file": "@mui_icons-material_NotificationsActiveOutlined.js",
+      "fileHash": "be762792",
+      "needsInterop": true
+    },
+    "@mui/icons-material/EjectOutlined": {
+      "src": "../../node_modules/@mui/icons-material/EjectOutlined.js",
+      "file": "@mui_icons-material_EjectOutlined.js",
+      "fileHash": "6468b6b5",
+      "needsInterop": true
+    },
+    "@mui/icons-material/InfoOutlined": {
+      "src": "../../node_modules/@mui/icons-material/InfoOutlined.js",
+      "file": "@mui_icons-material_InfoOutlined.js",
+      "fileHash": "763f15d7",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-K4EMN5BQ": {
+      "file": "chunk-K4EMN5BQ.js"
+    },
+    "chunk-JVFU7BZX": {
+      "file": "chunk-JVFU7BZX.js"
+    },
+    "chunk-HS7GO4I2": {
+      "file": "chunk-HS7GO4I2.js"
+    }
+  }
+}

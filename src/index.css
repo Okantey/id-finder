@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --font-family: "Poppins", sans-serif;
+  --standard-weight: 500;
+  --heavy-weight: 700;
+  --Cyan: hsl(180, 66%, 49%);
+  --Dark-Violet: hsl(257, 27%, 26%);
+  --Purple: rgb(79, 9, 192);
+  --Red: hsl(0, 87%, 67%);
+  --Gray: hsl(0, 0%, 85%);
+  --Light-Gray: hsl(0, 0%, 97%);
+  --Grayish-Violet: hsl(257, 7%, 63%);
+  --Very-Dark-Blue: hsl(255, 11%, 22%);
+  --Very-Dark-Violet: hsl(260, 8%, 14%);
+  --body-padding: 8%;
+}
+
+html {
+  font-size: 100%;
+}
+
+* {
+  font-family: var(--font-family);
+}
+button {
+  cursor: pointer;
+}
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  color: var(--Light-Gray);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    135deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgb(59, 48, 84, 1) 100%
+  );
+  overflow-x: hidden;
+}
