@@ -10,39 +10,43 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  // handle login request
-  const handleLogin = async (event) => {
+  const handleLogin = (event) => {
     event.preventDefault();
     if (!username || !password) {
       setValidation("Please enter username and password");
+      return;
     }
-    const response = await fetch("http://localhost:8080/login", {
+    const loginData = { username, password };
+    fetch("http://localhost:8080/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
-    });
-    if (response.ok) {
-      const data = await response.json();
-      const token = data.token;
-      token
-        ? localStorage.setItem("token", token)
-        : setErrorMessage("an error occurred");
-      setTimeout(() => {
-        window.location.href = "/home";
-      }, 2000);
-      setSuccessMessage(`Authenticated as ${username}`);
-    } else if (!response.ok) {
-      setErrorMessage("an error occurred");
-    } else {
-      setErrorMessage("invalid username or password");
-    }
+      body: JSON.stringify(loginData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.token) {
+          localStorage.setItem("token", data.token);
+          setTimeout(() => {
+            window.location.href = "/home";
+          }, 2000);
+          setSuccessMessage(`Authenticated as ${username}`);
+        } else {
+          setErrorMessage("Invalid username or password.");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        setErrorMessage("An error occurred. Please try again.");
+      });
   };
   return (
     <div className="account__container">
       <h1>Welcome Back!</h1>
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && (
+        <p style={{ textAlign: "center", color: "red" }}>{errorMessage}</p>
+      )}
       {validation && <p>{validation}</p>}
       <form className="account__form" onSubmit={handleLogin}>
         <div className="account__props">
@@ -64,7 +68,11 @@ const Login = () => {
           />
         </div>
         <input type="submit" value="Sign In" className="proceed" />
-        {successMessage && <p>{successMessage}</p>}
+        {successMessage && (
+          <p style={{ textAlign: "center", background: "green" }}>
+            {successMessage}
+          </p>
+        )}
         <p style={{ display: "flex", justifyContent: "end" }}>
           Forgot Password?
         </p>
